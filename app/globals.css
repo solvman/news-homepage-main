@@ -1,3 +1,114 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    /* Base colors */
+
+    --site-color-primary-1: 35, 77%, 62%; /* Soft orange */
+    --site-color-primary-2: 5, 85%, 63%; /* Soft red */
+    --site-color-neutral-100: 36, 100%, 99%; /* Almost White */
+    --site-color-neutral-200: 233, 8%, 79%; /* Silver */
+    --site-color-neutral-600: 236, 13%, 42%; /* Gunmetal */
+    --site-color-neutral-900: 240, 100%, 5%; /* Dark Space Blue */
+
+    /* Color scheme by application*/
+
+    --color-primary: var(--site-color-neutral-100);
+    --color-primary-foreground: var(--site-color-neutral-900);
+    --color-primary-foreground-muted: var(--site-color-neutral-600);
+    --color-primary-inverted: var(--site-color-neutral-900);
+    --color-primary-inverted-foreground: var(--site-color-neutral-100);
+    --color-primary-inverted-foreground-muted: var(--site-color-neutral-200);
+    --color-accent: var(--site-color-primary-2);
+    --color-accent-inverted: var(--site-color-primary-1);
+
+    /* Typography */
+
+    --site-font-weight-normal: 400;
+    --site-font-weight-bold: 700;
+    --site-font-weight-black: 800;
+
+    --site-font-base: 15px;
+
+    --site-font-size-sm: 0.93333rem;
+    --site-font-size-md: 1rem;
+    --site-font-size-lg: 1.2rem;
+    --site-font-size-xl: 1.33333rem;
+    --site-font-size-2xl: 2.13333rem;
+    --site-font-size-3xl: 2.66667rem;
+    --site-font-size-4xl: 3.73333rem;
+
+    --site-line-height-md: 1;
+    --site-line-height-lg: 1.33333;
+    --site-line-height-xl: 1.73333;
+
+    /* Layout */
+
+    --site-content-max-width: 76.13333rem; /* 1142px */
+    --site-content-padding: 1.07rem; /* 16px */
+  }
+
+  html {
+    font-size: var(--site-font-base);
+  }
+
+  body {
+    font-size: var(--site-font-size-medium);
+    color: var(--color-primary-foreground-muted);
+    background-color: var(--color-primary);
+    font-weight: var(--site-font-weight-normal);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--color-primary-foreground);
+  }
+}
+
+@layer utilities {
+  .heading-xs {
+    font-size: var(--site-font-size-lg);
+    font-weight: var(--site-font-weight-black);
+    line-height: var(--site-line-height-lg);
+  }
+
+  .heading-sm {
+    font-size: var(--site-font-size-xl);
+    font-weight: var(--site-font-weight-black);
+    line-height: var(--site-line-height-lg);
+  }
+
+  .heading-md {
+    font-size: var(--site-font-size-2xl);
+    font-weight: var(--site-font-weight-bold);
+    line-height: var(--site-line-height-lg);
+  }
+
+  .heading-lg {
+    font-size: var(--site-font-size-3xl);
+    font-weight: var(--site-font-weight-bold);
+    line-height: var(--site-line-height-md);
+  }
+
+  .heading-xl {
+    font-size: clamp(
+      var(--site-font-size-3xl),
+      2.0465rem + 2.646vw,
+      var(--site-font-size-4xl)
+    );
+    font-weight: var(--site-font-weight-bold);
+    line-height: var(--site-line-height-md);
+  }
+
+  .content-wrapper {
+    max-width: var(--site-content-max-width);
+    margin-inline: auto;
+    padding-inline: var(--site-content-padding);
+  }
+}
