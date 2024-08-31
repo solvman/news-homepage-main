@@ -5,12 +5,12 @@ import Image from "next/image";
 function Popular() {
   const popularArticles = usePopularArticles();
   return (
-    <section className="flex flex-row">
+    <section className="flex flex-col lg:flex-row">
       <h2 className="sr-only">Popular articles</h2>
       {popularArticles.map((article: ArticleType, index) => (
         <article
           key={article.id}
-          className="gap-site-md flex basis-1/3 flex-row"
+          className="gap-site-md flex flex-row lg:basis-1/3"
         >
           {article.img?.src.thumbnail && (
             <Image
