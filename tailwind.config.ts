@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      gap: {
+        "site-md": "var(--site-gap-md)",
+      },
       width: {
         "site-clamp-100px-200px": "var(--site-clamp-100px-200px)",
       },
