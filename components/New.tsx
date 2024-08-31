@@ -5,11 +5,13 @@ function New() {
   const newArticles = useRecentArticles();
 
   return (
-    <section>
-      <h2>New</h2>
+    <section className="px-site-clamp-20px-24px py-site-clamp-24px-32px bg-primary-inverted text-primary-inverted-foreground-muted">
+      <h2 className="heading-lg text-accent-inverted">New</h2>
       {newArticles.map((article: ArticleType) => (
         <article key={article.id}>
-          <h3>{article.title}</h3>
+          <h3 className="heading-sm text-primary-inverted-foreground">
+            {article.title}
+          </h3>
           <p>{article.exerpt}</p>
         </article>
       ))}

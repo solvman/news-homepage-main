@@ -12,8 +12,10 @@ function Popular() {
           {article.img?.src.thumbnail && (
             <Image src={article.img.src.thumbnail} alt={article.img.alt} />
           )}
-          <span>{(index + 1).toString().padStart(2, "0")}</span>
-          <h3>{article.title}</h3>
+          <span className="heading-md text-accent">
+            {(index + 1).toString().padStart(2, "0")}
+          </span>
+          <h3 className="heading-xs">{article.title}</h3>
           <p>{article.exerpt}</p>
         </article>
       ))}

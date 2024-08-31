@@ -8,8 +8,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      width: {
+        "site-clamp-100px-200px": "var(--site-clamp-100px-200px)",
+      },
       padding: {
         "site-content": "var(--site-content-padding)",
+        "site-clamp-20px-24px": "var(--site-clamp-20px-24px)",
+        "site-clamp-24px-32px": "var(--site-clamp-24px-32px)",
       },
       maxWidth: {
         "site-content": "var(--site-content-max-width)",
