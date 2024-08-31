@@ -6,15 +6,17 @@ function New() {
 
   return (
     <section className="px-site-clamp-20px-24px py-site-clamp-24px-32px bg-primary-inverted text-primary-inverted-foreground-muted">
-      <h2 className="heading-lg text-accent-inverted">New</h2>
-      {newArticles.map((article: ArticleType) => (
-        <article key={article.id}>
-          <h3 className="heading-sm text-primary-inverted-foreground">
-            {article.title}
-          </h3>
-          <p>{article.exerpt}</p>
-        </article>
-      ))}
+      <h2 className="heading-lg mb-9 text-accent-inverted">New</h2>
+      <div className="divide-y divide-primary-foreground-muted">
+        {newArticles.map((article: ArticleType) => (
+          <article key={article.id} className="py-8 first:pt-0 last:pb-0">
+            <h3 className="heading-sm mb-2 text-primary-inverted-foreground">
+              {article.title}
+            </h3>
+            <p>{article.exerpt}</p>
+          </article>
+        ))}
+      </div>
     </section>
   );
 }

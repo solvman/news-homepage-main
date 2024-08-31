@@ -9,8 +9,10 @@ export default function Home() {
       <Header />
       <main className="content-wrapper">
         <h1 className="sr-only">News homepage</h1>
-        <Hero />
-        <New />
+        <div className="gap-site-clamp-24px-30px mb-14 lg:mb-16 lg:grid lg:grid-cols-3">
+          <Hero />
+          <New />
+        </div>
         <Popular />
       </main>
     </>

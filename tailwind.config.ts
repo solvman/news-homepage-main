@@ -8,8 +8,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      margin: {
+        "site-clamp-24px-30px": "var(--site-clamp-24px-30px)",
+      },
       gap: {
         "site-md": "var(--site-gap-md)",
+        "site-clamp-24px-30px": "var(--site-clamp-24px-30px)",
       },
       width: {
         "site-clamp-100px-200px": "var(--site-clamp-100px-200px)",
