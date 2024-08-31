@@ -1,6 +1,8 @@
-import { ArticleType, popularArticles } from "@/data/data";
+import { type ArticleType } from "@/data/data";
+import { usePopularArticles } from "@/hooks/usePopularArticles";
 
 function Popular() {
+  const popularArticles = usePopularArticles();
   return (
     <section>
       <h2 className="sr-only">Popular articles</h2>

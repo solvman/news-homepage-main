@@ -1,6 +1,9 @@
-import { newArticles, type ArticleType } from "@/data/data";
+import { type ArticleType } from "@/data/data";
+import { useRecentArticles } from "@/hooks/useRecentArtilces";
 
 function New() {
+  const newArticles = useRecentArticles();
+
   return (
     <section>
       <h2>New</h2>
