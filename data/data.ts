@@ -1,3 +1,12 @@
+export type ArticleImageType = {
+  src: {
+    thumbnail?: string;
+    desktop?: string;
+    mobile?: string;
+  };
+  alt: string;
+};
+
 export type ArticleType = {
   id: number;
   title: string;
@@ -6,7 +15,7 @@ export type ArticleType = {
   published: string;
   featured?: boolean;
   url: string;
-  img?: string;
+  img?: ArticleImageType;
 };
 
 export const articles: ArticleType[] = [
@@ -17,6 +26,12 @@ export const articles: ArticleType[] = [
     rank: 10,
     published: "2022-08-25",
     url: "#",
+    img: {
+      src: {
+        thumbnail: "/images/image-retro-pcs.jpg",
+      },
+      alt: "Retro PCs",
+    },
   },
   {
     id: 2,
@@ -25,6 +40,12 @@ export const articles: ArticleType[] = [
     rank: 9,
     published: "2022-08-26",
     url: "#",
+    img: {
+      src: {
+        thumbnail: "/images/image-top-laptops.jpg",
+      },
+      alt: "Laptops",
+    },
   },
   {
     id: 3,
@@ -33,6 +54,12 @@ export const articles: ArticleType[] = [
     rank: 8,
     published: "2022-08-27",
     url: "#",
+    img: {
+      src: {
+        thumbnail: "/images/image-gaming-growth.jpg",
+      },
+      alt: "Gaming joystick",
+    },
   },
   {
     id: 4,
@@ -69,5 +96,12 @@ export const articles: ArticleType[] = [
     published: "2022-08-24",
     featured: true,
     url: "#",
+    img: {
+      src: {
+        desktop: "/images/image-web-3-desktop.jpg",
+        mobile: "/images/image-web-3-mobile.jpg",
+      },
+      alt: "Web 3.0",
+    },
   },
 ];
