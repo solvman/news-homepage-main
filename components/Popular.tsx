@@ -16,11 +16,18 @@ function Popular() {
               className="w-[100px]"
             />
           )}
-          <div className="flex flex-1 flex-col">
-            <span className="heading-md text-accent">
+          <div className="flex h-full flex-1 flex-col justify-between">
+            <span className="heading-md block leading-none text-accent">
               {(index + 1).toString().padStart(2, "0")}
             </span>
-            <h3 className="heading-xs">{article.title}</h3>
+            <h3 className="heading-xs">
+              <a
+                href={article.url}
+                className="transition duration-200 hover:text-accent"
+              >
+                {article.title}
+              </a>
+            </h3>
             <p>{article.exerpt}</p>
           </div>
         </article>

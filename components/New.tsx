@@ -11,7 +11,12 @@ function New() {
         {newArticles.map((article: ArticleType) => (
           <article key={article.id} className="py-8 first:pt-0 last:pb-0">
             <h3 className="heading-sm mb-2 text-primary-inverted-foreground">
-              {article.title}
+              <a
+                href={article.url}
+                className="transition duration-200 hover:text-accent-inverted"
+              >
+                {article.title}
+              </a>
             </h3>
             <p>{article.exerpt}</p>
           </article>

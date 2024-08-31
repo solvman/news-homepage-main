@@ -9,7 +9,7 @@ export default function Home() {
       <Header />
       <main className="content-wrapper">
         <h1 className="sr-only">News homepage</h1>
-        <div className="gap-site-clamp-24px-30px mb-14 lg:mb-16 lg:grid lg:grid-cols-3">
+        <div className="gap-site-clamp-24px-30px mb-14 flex flex-col lg:mb-16 lg:grid lg:grid-cols-3">
           <Hero />
           <New />
         </div>
