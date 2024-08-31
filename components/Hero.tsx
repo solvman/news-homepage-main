@@ -1,15 +1,11 @@
+import { heroArticle } from "@/data/data";
+
 function Hero() {
   return (
     <section>
-      <h2 className="text-primary-foreground heading-xl">
-        The Bright Future of Web 3.0?
-      </h2>
-      <p>
-        We dive into the next evolution of the web that claims to put the power
-        of the platforms back into the hands of the people. But is it really
-        fulfilling its promise?
-      </p>
-      <a href="">Read more</a>
+      <h2 className="heading-xl">{heroArticle.title}</h2>
+      <p>{heroArticle.exerpt}</p>
+      <a href={heroArticle.url}>Read more</a>
     </section>
   );
 }
