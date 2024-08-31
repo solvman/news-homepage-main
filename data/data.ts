@@ -1,8 +1,16 @@
+import { StaticImageData } from "next/image";
+
+import imageRetroPCs from "@/assets/images/image-retro-pcs.jpg";
+import imageTopLaptops from "@/assets/images/image-top-laptops.jpg";
+import imageGamingGrowth from "@/assets/images/image-gaming-growth.jpg";
+import imageWeb3Desktop from "@/assets/images/image-web-3-desktop.jpg";
+import imageWeb3Mobile from "@/assets/images/image-web-3-mobile.jpg";
+
 export type ArticleImageType = {
   src: {
-    thumbnail?: string;
-    desktop?: string;
-    mobile?: string;
+    thumbnail?: StaticImageData;
+    desktop?: StaticImageData;
+    mobile?: StaticImageData;
   };
   alt: string;
 };
@@ -28,7 +36,7 @@ export const articles: ArticleType[] = [
     url: "#",
     img: {
       src: {
-        thumbnail: "/images/image-retro-pcs.jpg",
+        thumbnail: imageRetroPCs,
       },
       alt: "Retro PCs",
     },
@@ -42,7 +50,7 @@ export const articles: ArticleType[] = [
     url: "#",
     img: {
       src: {
-        thumbnail: "/images/image-top-laptops.jpg",
+        thumbnail: imageTopLaptops,
       },
       alt: "Laptops",
     },
@@ -56,7 +64,7 @@ export const articles: ArticleType[] = [
     url: "#",
     img: {
       src: {
-        thumbnail: "/images/image-gaming-growth.jpg",
+        thumbnail: imageGamingGrowth,
       },
       alt: "Gaming joystick",
     },
@@ -98,8 +106,8 @@ export const articles: ArticleType[] = [
     url: "#",
     img: {
       src: {
-        desktop: "/images/image-web-3-desktop.jpg",
-        mobile: "/images/image-web-3-mobile.jpg",
+        desktop: imageWeb3Desktop,
+        mobile: imageWeb3Mobile,
       },
       alt: "Web 3.0",
     },
