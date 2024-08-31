@@ -6,12 +6,12 @@
   :root {
     /* Base colors */
 
-    --site-color-primary-1: 35, 77%, 62%; /* Soft orange */
-    --site-color-primary-2: 5, 85%, 63%; /* Soft red */
-    --site-color-neutral-100: 36, 100%, 99%; /* Almost White */
-    --site-color-neutral-200: 233, 8%, 79%; /* Silver */
-    --site-color-neutral-600: 236, 13%, 42%; /* Gunmetal */
-    --site-color-neutral-900: 240, 100%, 5%; /* Dark Space Blue */
+    --site-color-primary-1: 35 77% 62%; /* Soft orange */
+    --site-color-primary-2: 5 85% 63%; /* Soft red */
+    --site-color-neutral-100: 36 100% 99%; /* Almost White */
+    --site-color-neutral-200: 233 8% 79%; /* Silver */
+    --site-color-neutral-600: 236 13% 42%; /* Gunmetal */
+    --site-color-neutral-900: 240 100% 5%; /* Dark Space Blue */
 
     /* Color scheme by application*/
 
@@ -40,6 +40,12 @@
     --site-font-size-3xl: 2.66667rem;
     --site-font-size-4xl: 3.73333rem;
 
+    --site-font-clamp-3xl-4xl: clamp(
+      var(--site-font-size-3xl),
+      2.0465rem + 2.646vw,
+      var(--site-font-size-4xl)
+    );
+
     --site-line-height-md: 1;
     --site-line-height-lg: 1.33333;
     --site-line-height-xl: 1.73333;
@@ -55,10 +61,7 @@
   }
 
   body {
-    font-size: var(--site-font-size-medium);
-    color: var(--color-primary-foreground-muted);
-    background-color: var(--color-primary);
-    font-weight: var(--site-font-weight-normal);
+    @apply text-primary-foreground-muted bg-primary;
   }
 
   h1,
@@ -67,48 +70,32 @@
   h4,
   h5,
   h6 {
-    color: var(--color-primary-foreground);
+    @apply text-primary-foreground;
   }
 }
 
 @layer utilities {
   .heading-xs {
-    font-size: var(--site-font-size-lg);
-    font-weight: var(--site-font-weight-black);
-    line-height: var(--site-line-height-lg);
+    @apply text-site-lg font-site-black leading-site-lg;
   }
 
   .heading-sm {
-    font-size: var(--site-font-size-xl);
-    font-weight: var(--site-font-weight-black);
-    line-height: var(--site-line-height-lg);
+    @apply text-site-xl font-site-black leading-site-lg;
   }
 
   .heading-md {
-    font-size: var(--site-font-size-2xl);
-    font-weight: var(--site-font-weight-bold);
-    line-height: var(--site-line-height-lg);
+    @apply text-site-2xl font-site-bold leading-site-lg;
   }
 
   .heading-lg {
-    font-size: var(--site-font-size-3xl);
-    font-weight: var(--site-font-weight-bold);
-    line-height: var(--site-line-height-md);
+    @apply text-site-3xl font-site-bold leading-site-md;
   }
 
   .heading-xl {
-    font-size: clamp(
-      var(--site-font-size-3xl),
-      2.0465rem + 2.646vw,
-      var(--site-font-size-4xl)
-    );
-    font-weight: var(--site-font-weight-bold);
-    line-height: var(--site-line-height-md);
+    @apply text-site-clamp-3xl-4xl font-site-black leading-site-md;
   }
 
   .content-wrapper {
-    max-width: var(--site-content-max-width);
-    margin-inline: auto;
-    padding-inline: var(--site-content-padding);
+    @apply px-site-content max-w-site-content mx-auto;
   }
 }
