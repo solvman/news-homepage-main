@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="content-wrapper">
+      <main className="content-wrapper mb-site-clamp-30px-60px">
         <h1 className="sr-only">News homepage</h1>
         <div className="gap-site-clamp-24px-30px mb-14 flex flex-col lg:mb-16 lg:grid lg:grid-cols-3">
           <Hero />

@@ -10,15 +10,17 @@ const config: Config = {
     extend: {
       margin: {
         "site-clamp-24px-30px": "var(--site-clamp-24px-30px)",
+        "site-clamp-30px-60px": "var(--site-clamp-30px-60px)",
       },
       gap: {
         "site-md": "var(--site-gap-md)",
         "site-clamp-24px-30px": "var(--site-clamp-24px-30px)",
       },
       width: {
-        "site-clamp-100px-200px": "var(--site-clamp-100px-200px)",
+        "site-clamp-45px-66px": "var(--site-clamp-45px-66px)",
       },
       padding: {
+        "site-md": "var(--site-gap-md)",
         "site-content": "var(--site-content-padding)",
         "site-clamp-20px-24px": "var(--site-clamp-20px-24px)",
         "site-clamp-24px-32px": "var(--site-clamp-24px-32px)",
