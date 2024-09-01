@@ -26,8 +26,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/solvman/news-homepage-main](https://github.com/solvman/news-homepage-main)
+- Live Site URL: [https://main--warm-churros-d57815.netlify.app/](https://main--warm-churros-d57815.netlify.app/)
 
 ## My process
 
@@ -42,4 +42,4 @@ Users should be able to:
 - [Next.js](https://nextjs.org/) - React framework
 - [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework
 - [React Focus Lock](https://www.npmjs.com/package/react-focus-lock) - A focus lock utility
-- [React Remove Scroll](https://www.npmjs.com/package/react-remove-scroll)
+- [React Remove Scroll](https://www.npmjs.com/package/react-remove-scroll) - React scroll lock utility
