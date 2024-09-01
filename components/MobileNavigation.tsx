@@ -1,32 +1,52 @@
 "use client";
 
-import { useState } from "react";
-import HamburgerIcon from "./HamburgerIcon";
-import NavigationList from "./NavigationList";
+import { useEffect, useRef, useState } from "react";
 import { RemoveScroll } from "react-remove-scroll";
 import FocusLock from "react-focus-lock";
 
+import NavigationList from "@/components/NavigationList";
+import HamburgerIcon from "@/components/HamburgerIcon";
+
 function MobileNavigation() {
   const [isActive, setIsActive] = useState(false);
+  const closeRef = useRef(null);
+
+  useEffect(() => {
+    function handleEscape(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setIsActive(false);
+      }
+    }
+
+    if (isActive) {
+      document.addEventListener("keydown", handleEscape);
+    }
+
+    return () => {
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, [isActive]);
 
   function toggleActive() {
     setIsActive((prev) => !prev);
   }
 
-  if (!isActive) {
-    return (
-      <button onClick={toggleActive} className="md:hidden">
-        <HamburgerIcon />
-      </button>
-    );
-  }
+  const HamburgerButton = (
+    <button onClick={toggleActive} className="md:hidden">
+      <HamburgerIcon />
+      <span className="sr-only">Open navigation</span>
+    </button>
+  );
 
-  return (
+  const Drawer = (
     <FocusLock returnFocus>
       <RemoveScroll>
         <div className="fixed inset-0">
-          <div className="absolute inset-0 bg-primary-foreground opacity-25"></div>
-          <div className="absolute bottom-0 right-0 top-0 w-2/3 bg-primary">
+          <div
+            className="animate-fade-in absolute inset-0 bg-primary-foreground opacity-50"
+            onClick={toggleActive}
+          ></div>
+          <div className="animate-slide-in absolute bottom-0 right-0 top-0 w-2/3 bg-primary">
             <button onClick={toggleActive} className="my-8 ml-auto mr-6 block">
               <svg
                 width="32"
@@ -47,5 +67,7 @@ function MobileNavigation() {
       </RemoveScroll>
     </FocusLock>
   );
+
+  return <div className="md:hidden">{isActive ? Drawer : HamburgerButton}</div>;
 }
 export default MobileNavigation;
